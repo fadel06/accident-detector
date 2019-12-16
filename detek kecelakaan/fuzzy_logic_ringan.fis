@@ -1,0 +1,95 @@
+[System]
+Name='fuzzy_logic_ringan'
+Type='mamdani'
+Version=2.0
+NumInputs=9
+NumOutputs=1
+NumRules=1
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='accx'
+Range=[0 1]
+NumMFs=3
+MF1='lambat':'trimf',[-0.4 0 0.4]
+MF2='sedang':'trimf',[0.1 0.5 0.9]
+MF3='cepat':'trimf',[0.6 1 1.4]
+
+[Input2]
+Name='accy'
+Range=[0 1]
+NumMFs=3
+MF1='lambat':'trimf',[-0.4 0 0.4]
+MF2='sedang':'trimf',[0.1 0.5 0.9]
+MF3='cepat':'trimf',[0.6 1 1.4]
+
+[Input3]
+Name='accz'
+Range=[0 1]
+NumMFs=3
+MF1='lambat':'trimf',[-0.4 0 0.4]
+MF2='sedang':'trimf',[0.1 0.5 0.9]
+MF3='cepat':'trimf',[0.6 1 1.4]
+
+[Input4]
+Name='gyrox'
+Range=[0 1]
+NumMFs=3
+MF1='lurus':'trimf',[-0.4 0 0.4]
+MF2='sedang':'trimf',[0.1 0.5 0.9]
+MF3='miring':'trimf',[0.6 1 1.4]
+
+[Input5]
+Name='gyroy'
+Range=[0 1]
+NumMFs=3
+MF1='lurus':'trimf',[-0.4 0 0.4]
+MF2='sedang':'trimf',[0.1 0.5 0.9]
+MF3='miring':'trimf',[0.6 1 1.4]
+
+[Input6]
+Name='gyroz'
+Range=[0 1]
+NumMFs=3
+MF1='lurus':'trimf',[-0.4 0 0.4]
+MF2='sedang':'trimf',[0.1 0.5 0.9]
+MF3='miring':'trimf',[0.6 1 1.4]
+
+[Input7]
+Name='tumbukanx'
+Range=[0 1]
+NumMFs=3
+MF1='pelan':'trimf',[-0.4 0 0.4]
+MF2='biasa':'trimf',[0.1 0.5 0.9]
+MF3='keras':'trimf',[0.6 1 1.4]
+
+[Input8]
+Name='tumbukany'
+Range=[0 1]
+NumMFs=3
+MF1='pelan':'trimf',[-0.4 0 0.4]
+MF2='biasa':'trimf',[0.1 0.5 0.9]
+MF3='keras':'trimf',[0.6 1 1.4]
+
+[Input9]
+Name='tumbukanz'
+Range=[0 1]
+NumMFs=3
+MF1='pelan':'trimf',[-0.4 0 0.4]
+MF2='biasa':'trimf',[0.1 0.5 0.9]
+MF3='keras':'trimf',[0.6 1 1.4]
+
+[Output1]
+Name='indikasi'
+Range=[0 1]
+NumMFs=3
+MF1='normal':'gaussmf',[0.1699 6.939e-18]
+MF2='mungkin':'psigmf',[13.73 0.3 -6.865 0.9401]
+MF3='kecelakaan':'gbellmf',[0.2 2.5 1]
+
+[Rules]
+2 2 2 1 1 3 2 2 2, 2 (1) : 1
